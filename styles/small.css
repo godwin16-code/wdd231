@@ -54,7 +54,7 @@ header {
 nav {
     background-color: #FFD700;
     position: absolute;
-    top: 100%;
+    top: 13%;
     left: 0;
     width: 100%;
     transform: translateX(-100%);
