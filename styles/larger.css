@@ -1,0 +1,62 @@
+/* larger.css - Styles for larger screens */
+
+/* Media query for screens 768px and wider */
+@media screen and (min-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        transform: none;
+        background-color: transparent;
+        width: auto;
+    }
+
+    nav ul {
+        display: flex;
+        padding: 0;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        margin-bottom: 0;
+        margin-left: 1rem;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+    }
+
+    main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .courses {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    footer {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .social-links {
+        margin-bottom: 0;
+    }
+
+    section img {
+        float: right;
+        margin-left: 1rem;
+        max-width: 150px;
+    }
+}    
