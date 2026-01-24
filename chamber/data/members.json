@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Idaho Falls Coffee Roasters",
+    "address": "456 River St, Idaho Falls, ID 83402",
+    "phone": "(208) 555-5678",
+    "website": "https://idahofallscoffee.com",
+    "image": "coffee-roasters.jpg",
+    "membershipLevel": 3,
+    "description": "Premium coffee beans roasted locally"
+  },
+  {
+    "name": "Mountain View Realty",
+    "address": "789 Mountain Ave, Idaho Falls, ID 83403",
+    "phone": "(208) 555-9012",
+    "website": "https://mountainviewrealty.com",
+    "image": "realty.jpg",
+    "membershipLevel": 2,
+    "description": "Your trusted local real estate experts"
+  },
+  {
+    "name": "Snake River Dental",
+    "address": "321 Dental Ln, Idaho Falls, ID 83404",
+    "phone": "(208) 555-3456",
+    "website": "https://snakeriverdental.com",
+    "image": "dental.jpg",
+    "membershipLevel": 3,
+    "description": "Quality dental care for the whole family"
+  },
+  {
+    "name": "Idaho Falls Auto Repair",
+    "address": "654 Auto Blvd, Idaho Falls, ID 83405",
+    "phone": "(208) 555-7890",
+    "website": "https://idahofallsautorepair.com",
+    "image": "auto-repair.jpg",
+    "membershipLevel": 1,
+    "description": "Reliable auto repair services"
+  },
+  {
+    "name": "Teton Valley Bank",
+    "address": "987 Bank St, Idaho Falls, ID 83406",
+    "phone": "(208) 555-1234",
+    "website": "https://tetonvalleybank.com",
+    "image": "bank.jpg",
+    "membershipLevel": 3,
+    "description": "Community banking solutions"
+  },
+  {
+    "name": "Falls Fitness Center",
+    "address": "147 Fitness Way, Idaho Falls, ID 83407",
+    "phone": "(208) 555-5678",
+    "website": "https://fallsfitness.com",
+    "image": "fitness.jpg",
+    "membershipLevel": 2,
+    "description": "Your local gym for health and wellness"
+  },
+  {
+    "name": "Idaho Falls Bakery",
+    "address": "258 Bakery Ave, Idaho Falls, ID 83408",
+    "phone": "(208) 555-9012",
+    "website": "https://idahofallsbakery.com",
+    "image": "bakery.jpg",
+    "membershipLevel": 1,
+    "description": "Fresh baked goods daily"
+  }
+]

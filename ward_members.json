@@ -1,0 +1,71 @@
+[
+  {
+    "familyName": "Smith",
+    "moveInDate": "2023-05-15",
+    "numberOfPeople": 4,
+    "visitedByBishopric": true,
+    "members": [
+      {
+        "name": "John Smith",
+        "gender": "Male",
+        "birthdate": "1985-03-20"
+      },
+      {
+        "name": "Jane Smith",
+        "gender": "Female",
+        "birthdate": "1987-07-12"
+      },
+      {
+        "name": "Emily Smith",
+        "gender": "Female",
+        "birthdate": "2010-11-05"
+      },
+      {
+        "name": "Michael Smith",
+        "gender": "Male",
+        "birthdate": "2012-09-18"
+      }
+    ]
+  },
+  {
+    "familyName": "Johnson",
+    "moveInDate": "2024-01-10",
+    "numberOfPeople": 3,
+    "visitedByBishopric": false,
+    "members": [
+      {
+        "name": "Robert Johnson",
+        "gender": "Male",
+        "birthdate": "1990-12-03"
+      },
+      {
+        "name": "Sarah Johnson",
+        "gender": "Female",
+        "birthdate": "1992-04-25"
+      },
+      {
+        "name": "David Johnson",
+        "gender": "Male",
+        "birthdate": "2015-08-14"
+      }
+    ]
+  },
+  {
+    "familyName": "Williams",
+    "moveInDate": "2022-09-30",
+    "numberOfPeople": 2,
+    "visitedByBishopric": true,
+    "members": [
+      {
+        "name": "Lisa Williams",
+        "gender": "Female",
+        "birthdate": "1988-06-08"
+      },
+      {
+        "name": "James Williams",
+        "gender": "Male",
+        "birthdate": "1986-02-17"
+      }
+    ]
+  }
+]

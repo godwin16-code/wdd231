@@ -1,0 +1,76 @@
+/* larger.css - Styles for larger screens */
+
+@media screen and (min-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        background-color: transparent;
+        transform: none;
+        width: auto;
+    }
+
+    nav ul {
+        display: flex;
+        padding: 0;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 1rem;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+    }
+
+    main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #members {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .member-card {
+        padding: 1.5rem;
+    }
+
+    .member-list {
+        display: flex;
+        align-items: center;
+    }
+
+    .member-list img {
+        float: none;
+        margin-right: 1rem;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
