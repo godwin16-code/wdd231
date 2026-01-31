@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idaho Falls Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the Idaho Falls Chamber of Commerce. Discover local businesses, events, and opportunities to grow your connections.">
+    <meta name="author" content="Godwin Iwajomo">
+    <meta property="og:title" content="Idaho Falls Chamber of Commerce">
+    <meta property="og:description" content="Connect with local businesses and community events in Idaho Falls">
+    <meta property="og:image" content="images/chamber-logo.png">
+    <meta property="og:url" content="https://yourwebsite.com/chamber/">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/chamber-logo.png" alt="Chamber Logo">
+            <span class="name">Idaho Falls Chamber of Commerce</span>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/hero-image.jpg" alt="Idaho Falls cityscape" class="hero-image">
+            <div class="hero-content">
+                <h1>Welcome to Idaho Falls</h1>
+                <p>Grow your business connections and discover local opportunities</p>
+                <a href="#" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Current Events Section -->
+        <section class="current-events">
+            <h2>Upcoming Events</h2>
+            <div class="events-container" id="events"></div>
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather">
+            <h2>Weather in Idaho Falls</h2>
+            <div class="weather-container" id="weather-info"></div>
+        </section>
+
+        <!-- Company Spotlights Section -->
+        <section class="spotlights">
+            <h2>Member Spotlights</h2>
+            <div class="spotlights-container" id="spotlights"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Idaho Falls Chamber of Commerce</p>
+                <p>123 Main Street, Idaho Falls, ID 83401</p>
+                <p>Phone: (208) 555-1234</p>
+                <p>Email: info@idahofallschamber.com</p>
+            </div>
+            <div class="dev-info">
+                <p>&copy; <span id="currentyear"></span> Idaho Falls Chamber of Commerce</p>
+                <p>Godwin Iwajomo | WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

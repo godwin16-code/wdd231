@@ -2,16 +2,35 @@
 const membersContainer = document.querySelector('#members');
 const gridViewBtn = document.querySelector('#grid-view');
 const listViewBtn = document.querySelector('#list-view');
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
+
+// Use scoped names to avoid redeclaration errors when multiple scripts run
+const dirHamburger = document.querySelector('.hamburger');
+const dirNav = document.querySelector('nav');
 
 let members = [];
 let isGridView = true;
 
-// Hamburger menu toggle
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-});
+// Hamburger menu toggle (robust: check elements and manage aria-expanded)
+if (dirHamburger && dirNav) {
+    // set initial aria state
+    if (!dirHamburger.hasAttribute('aria-expanded')) {
+        dirHamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    dirHamburger.addEventListener('click', () => {
+        dirNav.classList.toggle('open');
+        const expanded = dirHamburger.getAttribute('aria-expanded') === 'true';
+        dirHamburger.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            dirNav.classList.remove('open');
+            dirHamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
 
 async function getMembers() {
     const response = await fetch('data/members.json');
