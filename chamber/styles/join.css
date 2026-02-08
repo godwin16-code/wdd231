@@ -1,0 +1,396 @@
+/* join.css - Styles for membership join page */
+
+.intro-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.join-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Form Styles */
+.membership-form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.membership-form fieldset {
+    border: none;
+    padding: 0 0 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.membership-form fieldset:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.membership-form legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.membership-form label {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.membership-form input[type="text"],
+.membership-form input[type="email"],
+.membership-form input[type="tel"],
+.membership-form select,
+.membership-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.membership-form input[type="text"]:focus,
+.membership-form input[type="email"]:focus,
+.membership-form input[type="tel"]:focus,
+.membership-form select:focus,
+.membership-form textarea:focus {
+    outline: none;
+    border-color: #1e40af;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.membership-form input.error,
+.membership-form select.error,
+.membership-form textarea.error {
+    border-color: #d32f2f;
+    background-color: #ffebee;
+}
+
+.membership-form input.error:focus,
+.membership-form select.error:focus,
+.membership-form textarea.error:focus {
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.membership-form textarea {
+    resize: both;
+    min-height: 120px;
+}
+
+.required {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.optional {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: normal;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Membership Cards Section */
+.membership-cards {
+    background-color: transparent;
+}
+
+.membership-cards h2 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-top: 4px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+/* Stagger the animation for each card */
+.np-card {
+    animation-delay: 0.1s;
+    border-top-color: #10b981;
+}
+
+.bronze-card {
+    animation-delay: 0.2s;
+    border-top-color: #b45309;
+}
+
+.silver-card {
+    animation-delay: 0.3s;
+    border-top-color: #6366f1;
+}
+
+.gold-card {
+    animation-delay: 0.4s;
+    border-top-color: #d97706;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card h3 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.card .price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.card .description {
+    color: #666;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.info-btn {
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.info-btn:hover {
+    background-color: #1e3a8a;
+    transform: scale(1.05);
+}
+
+.info-btn:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideDown 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #1e40af;
+}
+
+.modal-close:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.modal h2 {
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-list li {
+    padding: 0.7rem 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.modal-description {
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Larger Screens */
+@media screen and (min-width: 768px) {
+    .join-container {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    .membership-form {
+        flex: 1;
+        min-width: 400px;
+    }
+
+    .membership-cards {
+        flex: 1;
+        min-width: 350px;
+    }
+
+    .card {
+        margin-bottom: 1.2rem;
+        padding: 1.8rem;
+    }
+
+    .modal-content {
+        max-width: 600px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .join-container {
+        gap: 4rem;
+    }
+
+    .membership-form {
+        flex: 1.2;
+    }
+
+    .membership-cards {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .membership-cards h2 {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+}
+
+/* Accessibility improvements */
+.modal-content:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .membership-cards,
+    .submit-btn,
+    .info-btn {
+        display: none;
+    }
+}

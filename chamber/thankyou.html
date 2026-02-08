@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Idaho Falls Chamber of Commerce</title>
+    <meta name="description" content="Thank you for applying to join the Idaho Falls Chamber of Commerce.">
+    <meta name="author" content="Godwin Iwajomo">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/thankyou.css">
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/chamber-logo.png" alt="Chamber Logo">
+            <span class="name">Idaho Falls Chamber of Commerce</span>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu">&#9776;</button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="thank-you-container">
+            <div class="success-message">
+                <div class="check-icon">✓</div>
+                <h1>Thank You for Your Application!</h1>
+                <p class="subtitle">We've received your membership application and will review it shortly.</p>
+            </div>
+
+            <div class="submitted-info">
+                <h2>Your Application Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>First Name</label>
+                        <p id="displayFirstName" class="info-value">-</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Last Name</label>
+                        <p id="displayLastName" class="info-value">-</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Email Address</label>
+                        <p id="displayEmail" class="info-value">-</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Mobile Phone</label>
+                        <p id="displayPhone" class="info-value">-</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Business/Organization Name</label>
+                        <p id="displayBusinessName" class="info-value">-</p>
+                    </div>
+                    <div class="info-item">
+                        <label>Application Received</label>
+                        <p id="displayTimestamp" class="info-value">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <h2>What Happens Next</h2>
+                <ul>
+                    <li>We will review your application within 2-3 business days</li>
+                    <li>You'll receive a confirmation email with your membership details</li>
+                    <li>Check your email for login information and next steps</li>
+                    <li>Contact us if you have any questions in the meantime</li>
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <a href="join.html" class="btn btn-secondary">Submit Another Application</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Idaho Falls Chamber of Commerce</p>
+                <p>123 Main Street, Idaho Falls, ID 83401</p>
+                <p>Phone: (208) 555-1234</p>
+                <p>Email: info@idahofallschamber.com</p>
+            </div>
+            <div class="dev-info">
+                <p>&copy; <span id="currentyear"></span> Idaho Falls Chamber of Commerce</p>
+                <p>Godwin Iwajomo | WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

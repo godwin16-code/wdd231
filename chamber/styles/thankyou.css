@@ -1,0 +1,227 @@
+/* thankyou.css - Styles for thank you page */
+
+.thank-you-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.success-message {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 8px;
+    border-left: 4px solid #10b981;
+}
+
+.check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #10b981;
+    color: white;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.success-message h1 {
+    color: #10b981;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.submitted-info {
+    margin-bottom: 3rem;
+}
+
+.submitted-info h2 {
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.info-item {
+    background-color: #f9fafb;
+    padding: 1.2rem;
+    border-radius: 6px;
+    border-left: 3px solid #1e40af;
+}
+
+.info-item label {
+    display: block;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-item .info-value {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 0;
+    word-break: break-word;
+}
+
+.next-steps {
+    background-color: #fff9e6;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #f59e0b;
+    margin-bottom: 2rem;
+}
+
+.next-steps h2 {
+    color: #d97706;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding: 0;
+}
+
+.next-steps li {
+    padding: 0.7rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+    color: #333;
+    line-height: 1.6;
+}
+
+.next-steps li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-primary {
+    background-color: #1e40af;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+.btn-primary:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:focus {
+    outline: 2px solid #6b7280;
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 768px) {
+    .thank-you-container {
+        padding: 3rem;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .check-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+    }
+
+    .action-buttons {
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+
+    .btn {
+        flex: 0 1 auto;
+        min-width: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    .action-buttons {
+        display: none;
+    }
+
+    .thank-you-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* Accessibility improvements */
+.info-item:focus-visible {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
