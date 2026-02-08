@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idaho Falls Chamber of Commerce - Home</title>
-    <meta name="description" content="Welcome to the Idaho Falls Chamber of Commerce. Discover local businesses, events, and opportunities to grow your connections.">
+    <title>Discover Idaho Falls - Chamber of Commerce</title>
+    <meta name="description" content="Discover the attractions and features of Idaho Falls. Explore 8 must-visit destinations in the area.">
     <meta name="author" content="Godwin Iwajomo">
-    <meta property="og:title" content="Idaho Falls Chamber of Commerce - Local Business Network">
-    <meta property="og:description" content="Connect with local businesses, discover opportunities, and grow your network in Idaho Falls.">
+    <meta property="og:title" content="Discover Idaho Falls Area">
+    <meta property="og:description" content="Explore attractions, natural wonders, and destinations in the Idaho Falls region.">
     <meta property="og:image" content="https://yourwebsite.com/chamber/images/chamber-logo.png">
-    <meta property="og:url" content="https://yourwebsite.com/chamber/index.html">
+    <meta property="og:url" content="https://yourwebsite.com/chamber/discover.html">
     <link rel="icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/discover.css">
     <script src="scripts/index.js" defer></script>
+    <script src="scripts/discover.js" type="module" defer></script>
 </head>
 <body>
     <header>
@@ -31,40 +32,25 @@
     </header>
     <nav>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html">Join</a></li>
-            <li><a href="discover.html">Discover</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <img src="images/hero-image.jpg" alt="Idaho Falls cityscape" class="hero-image">
-            <div class="hero-content">
-                <h1>Welcome to Idaho Falls</h1>
-                <p>Grow your business connections and discover local opportunities</p>
-                <a href="join.html" class="cta-button">Join the Chamber</a>
-            </div>
-        </section>
+        <h1>Discover Idaho Falls</h1>
+        <p class="intro-text">Explore the natural wonders, cultural attractions, and outdoor destinations that make the Idaho Falls region special.</p>
 
-        <!-- Current Events Section -->
-        <section class="current-events">
-            <h2>Upcoming Events</h2>
-            <div class="events-container" id="events"></div>
-        </section>
+        <!-- Visitor Message -->
+        <div class="visitor-message" id="visitorMessage">
+            <!-- Message will be inserted by JavaScript -->
+        </div>
 
-        <!-- Weather Section -->
-        <section class="weather">
-            <h2>Weather in Idaho Falls</h2>
-            <div class="weather-container" id="weather-info"></div>
-        </section>
-
-        <!-- Company Spotlights Section -->
-        <section class="spotlights">
-            <h2>Member Spotlights</h2>
-            <div class="spotlights-container" id="spotlights"></div>
+        <!-- Attractions Grid -->
+        <section class="attractions-container" id="attractionsContainer">
+            <!-- Attraction cards will be inserted by JavaScript -->
         </section>
     </main>
     <footer>

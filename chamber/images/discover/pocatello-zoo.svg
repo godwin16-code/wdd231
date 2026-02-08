@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect fill="#90ee90" width="300" height="200"/>
+  <rect x="50" y="40" width="200" height="120" fill="#daa520" stroke="#666" stroke-width="2"/>
+  <circle cx="90" cy="90" r="15" fill="#ff6b6b"/>
+  <circle cx="130" cy="80" r="18" fill="#ffa500"/>
+  <circle cx="170" cy="95" r="16" fill="#32cd32"/>
+  <circle cx="210" cy="85" r="17" fill="#ff69b4"/>
+  <polygon points="75,155 100,130 125,155" fill="#8b4513"/>
+  <text x="150" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#333" font-weight="bold">Pocatello Zoo</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect fill="#87ceeb" width="300" height="150"/>
+  <polygon points="150,20 50,150 250,150" fill="#8b4513"/>
+  <polygon points="150,40 90,130 210,130" fill="#a0522d"/>
+  <rect x="130" y="120" width="40" height="30" fill="#daa520"/>
+  <text x="150" y="180" font-family="Arial" font-size="14" text-anchor="middle" fill="#2d5016" font-weight="bold">Teton Canyon</text>
+</svg>

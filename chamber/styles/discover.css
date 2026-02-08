@@ -1,0 +1,289 @@
+/* discover.css - Styles for the discover page with responsive grid layout */
+
+/* SMALL SCREENS: 320px - 640px */
+main {
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.intro-text {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Visitor Message */
+.visitor-message {
+    background-color: #e0f2fe;
+    border-left: 4px solid #0ea5e9;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    color: #0c4a6e;
+    font-weight: 600;
+    text-align: center;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Attractions Grid - Small Screen (1 column) */
+.attractions-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    grid-template-areas:
+        "area1"
+        "area2"
+        "area3"
+        "area4"
+        "area5"
+        "area6"
+        "area7"
+        "area8";
+}
+
+/* Attraction Card */
+.attraction-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.attraction-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.attraction-card figure {
+    margin: 0;
+    overflow: hidden;
+    height: 200px;
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.attraction-card h2 {
+    color: #1e40af;
+    font-size: 1.3rem;
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+}
+
+.attraction-card address {
+    display: block;
+    color: #666;
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    font-style: normal;
+    margin-bottom: 0.5rem;
+}
+
+.attraction-card p {
+    color: #333;
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.learn-more-btn {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem;
+    padding: 0.75rem;
+    background-color: #1e40af;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #1e3a8a;
+    transform: scale(1.02);
+}
+
+.learn-more-btn:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+/* MEDIUM SCREENS: 641px - 1024px */
+@media screen and (min-width: 641px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Medium Screen Grid - 2 columns with varied layout */
+    .attractions-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        grid-template-areas:
+            "area1 area2"
+            "area3 area4"
+            "area5 area6"
+            "area7 area8";
+    }
+
+    /* Add hover effect to images on medium+ screens */
+    .attraction-card img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .attraction-card:hover img {
+        transform: scale(1.08);
+        filter: brightness(1.1);
+    }
+
+    .learn-more-btn {
+        width: calc(100% - 2rem);
+    }
+}
+
+/* LARGE SCREENS: 1025px and above */
+@media screen and (min-width: 1025px) {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    main {
+        padding: 3rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Large Screen Grid - 4 columns with unique layout */
+    .attractions-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        grid-template-areas:
+            "area1 area1 area2 area3"
+            "area4 area5 area6 area6"
+            "area7 area7 area8 area8";
+    }
+
+    /* Featured/larger cards */
+    .attraction-card[style*="area1"],
+    .attraction-card[style*="area6"],
+    .attraction-card[style*="area7"],
+    .attraction-card[style*="area8"] {
+        /* These will naturally span based on grid-template-areas */
+    }
+
+    /* More pronounced hover effect on larger screens */
+    .attraction-card img {
+        filter: brightness(0.95) saturate(0.9);
+    }
+
+    .attraction-card:hover img {
+        transform: scale(1.12);
+        filter: brightness(1.15) saturate(1.1);
+    }
+
+    .learn-more-btn {
+        width: calc(100% - 2rem);
+    }
+
+    .visitor-message {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Alternative hover effects for images */
+@media screen and (min-width: 641px) {
+    /* Subtle overlay effect */
+    .attraction-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background-color: rgba(30, 64, 175, 0.1);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .attraction-card:hover::after {
+        opacity: 1;
+    }
+}
+
+/* Accessibility */
+.attraction-card:focus-within {
+    outline: 3px solid #1e40af;
+    outline-offset: -3px;
+}
+
+/* Print styles */
+@media print {
+    .visitor-message {
+        display: none;
+    }
+
+    .attractions-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .attraction-card {
+        page-break-inside: avoid;
+    }
+}
+
+/* High DPI/Retina Screen Support */
+@media (min-width: 641px) and (-webkit-min-device-pixel-ratio: 2),
+       (min-width: 641px) and (min-resolution: 192dpi) {
+    .attraction-card img {
+        /* Can optimize image loading for retina screens if needed */
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .visitor-message {
+        animation: none;
+    }
+
+    .attraction-card img,
+    .attraction-card {
+        transition: none;
+    }
+}

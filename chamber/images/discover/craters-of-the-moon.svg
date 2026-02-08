@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect fill="#8b0000" width="300" height="200"/>
+  <circle cx="60" cy="60" r="20" fill="#ff4500"/>
+  <circle cx="160" cy="80" r="25" fill="#ff6347"/>
+  <circle cx="240" cy="50" r="18" fill="#ff4500"/>
+  <polygon points="80,140 100,100 120,140" fill="#444"/>
+  <polygon points="160,160 190,110 220,160" fill="#333"/>
+  <text x="150" y="190" font-family="Arial" font-size="14" text-anchor="middle" fill="#f5f1e8" font-weight="bold">Craters of Moon</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <rect fill="#2d5016" width="300" height="200"/>
+  <text x="150" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#d4a574" font-weight="bold">Idaho Falls</text>
+  <text x="150" y="80" font-family="Arial" font-size="16" text-anchor="middle" fill="#f5f1e8">Temple</text>
+  <path d="M 150 100 L 120 150 L 180 150 Z" fill="#d4a574"/>
+  <rect x="130" y="130" width="40" height="20" fill="#666"/>
+</svg>
