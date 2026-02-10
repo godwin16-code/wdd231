@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Harvest & Hearth Restaurant</title>
+    <meta name="description" content="Browse the seasonal menu at Harvest & Hearth. Fresh, locally-sourced dishes featuring ingredients from our farm partners.">
+    <meta name="author" content="Godwin Iwajomo">
+    <meta property="og:title" content="Menu - Harvest & Hearth">
+    <meta property="og:description" content="Seasonal menu featuring fresh local ingredients.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232D5016' width='100' height='100'/><text y='75' font-size='90' font-weight='bold' fill='%23D4A574' text-anchor='middle' x='50'>H</text></svg>">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/images.css">
+</head>
+<body>
+    <header>
+        <h1>🌾 Harvest & Hearth</h1>
+        <button class="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about-contact.html">About & Contact</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <main>
+                <section class="hero" style="padding: 2rem 1.5rem;">
+                        <picture style="display:block; margin:0 auto 1rem; max-width:1000px;">
+                            <img src="images/hero.svg" alt="Harvest & Hearth hero image" class="hero-image" loading="lazy">
+                        </picture>
+                        <h1>Our Menu</h1>
+                        <p>Seasonal dishes crafted from the finest local ingredients</p>
+                </section>
+
+        <section class="content-section">
+            <h2>Browse Our Menu</h2>
+            
+            <!-- Filter Options -->
+            <div style="margin-bottom: 2rem; padding: 1.5rem; background-color: #f5f1e8; border-radius: 8px;">
+                <h3 style="margin-top: 0;">Filter Menu</h3>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong>By Category:</strong>
+                    <div style="margin-top: 0.5rem;">
+                        <button data-filter-category="all" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">All</button>
+                        <button data-filter-category="appetizer" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">Appetizers</button>
+                        <button data-filter-category="entree" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">Entrees</button>
+                        <button data-filter-category="dessert" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">Desserts</button>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong>By Dietary:</strong>
+                    <div style="margin-top: 0.5rem;">
+                        <button data-filter-diet="all" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">All Items</button>
+                        <button data-filter-diet="vegetarian" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">Vegetarian</button>
+                        <button data-filter-diet="seasonal" class="btn btn-small" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">Seasonal Only</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="sort-menu"><strong>Sort By:</strong></label>
+                    <select id="sort-menu" data-sort-menu style="padding: 0.5rem; font-size: 1rem; margin-left: 0.5rem;">
+                        <option value="name">Name (A-Z)</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div data-menu-container class="menu-grid">
+                <!-- Menu items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section class="content-section">
+            <h2>About Our Menu</h2>
+            <p>
+                At Harvest & Hearth, we believe that great food starts with great ingredients. Our menu changes seasonally 
+                to reflect what's freshly available from our local farm partners. Each dish is carefully crafted by our chef 
+                to showcase the natural flavors and quality of locally-sourced ingredients.
+            </p>
+            <p>
+                We work closely with family farms and local producers throughout Idaho to bring you the freshest, most flavorful 
+                dining experience possible. From heirloom vegetables to grass-fed meats, every ingredient tells a story of local 
+                agriculture and stewardship.
+            </p>
+            <h3>Our Farm Partners</h3>
+            <ul style="column-count: 2; list-style-position: inside;">
+                <li>Miller Family Farm</li>
+                <li>Riverside Organic</li>
+                <li>Valley View Ranch</li>
+                <li>Happy Hen Farms</li>
+                <li>Berry Hill Orchards</li>
+                <li>Mountain Fresh Foraging</li>
+                <li>Idaho Trout Co</li>
+                <li>Harvest Creamery</li>
+                <li>Harvest Lavender Farm</li>
+                <li>Pacific Coast Seafood</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Modal for Menu Item Details -->
+    <div data-modal class="modal">
+        <div class="modal-content">
+            <!-- Content will be inserted here dynamically -->
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">📹 Demo Video</a> | 
+            <a href="attributions.html">Attributions</a>
+        </p>
+        <p>&copy; 2024 Harvest & Hearth Restaurant. All rights reserved.</p>
+        <p>Experience farm-to-table dining in Idaho Falls, ID</p>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from './scripts/app.mjs';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>

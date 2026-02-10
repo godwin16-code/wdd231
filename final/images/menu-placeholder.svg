@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#F5F1E8" />
+  <g fill="#2D5016" font-family="Lato, sans-serif">
+    <rect x="40" y="40" width="720" height="320" rx="8" fill="#efeedd" />
+    <text x="60" y="420" font-size="22" font-weight="700">Seasonal Dish</text>
+    <text x="60" y="450" font-size="16" fill="#6a6a6a">Fresh local ingredients</text>
+  </g>
+</svg>

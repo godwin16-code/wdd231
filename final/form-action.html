@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Received - Harvest & Hearth</title>
+    <meta name="description" content="Thank you for your submission to Harvest & Hearth Restaurant.">
+    <meta name="author" content="Godwin Iwajomo">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232D5016' width='100' height='100'/><text y='75' font-size='90' font-weight='bold' fill='%23D4A574' text-anchor='middle' x='50'>H</text></svg>">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/images.css">
+</head>
+<body>
+    <header>
+        <h1>🌾 Harvest & Hearth</h1>
+        <button class="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about-contact.html">About & Contact</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="content-section" style="text-align: center;">
+            <h1 style="color: #2D5016; font-size: 2.5rem;">✓ Thank You!</h1>
+            <h2 style="border: none; color: var(--primary-color);">Submission Received</h2>
+            
+            <p style="font-size: 1.1rem; margin: 2rem 0;">
+                We've received your submission and appreciate your interest in Harvest & Hearth.
+            </p>
+
+            <div style="background-color: #f0f8e8; padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid var(--primary-color);">
+                <h3 style="color: var(--primary-color); margin-top: 0;">What Happens Next</h3>
+                <ul style="text-align: left; display: inline-block;">
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>For Reservations:</strong> You'll receive a confirmation email shortly. If you don't see it, 
+                        please check your spam folder or call us at (208) 555-1234.
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>For Inquiries:</strong> We aim to respond within 24 hours during business hours. Thank you 
+                        for your patience!
+                    </li>
+                    <li>
+                        <strong>Your Information:</strong> We take your privacy seriously and will never share your contact 
+                        information with third parties.
+                    </li>
+                </ul>
+            </div>
+
+            <div id="form-data" style="text-align: left; background-color: #f5f1e8; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h3 style="margin-top: 0; color: var(--primary-color);">Submission Details</h3>
+                <div id="submitted-info"></div>
+            </div>
+
+            <p style="margin-top: 2rem;">
+                <a href="index.html" class="btn">Return to Home</a>
+                <a href="menu.html" class="btn btn-secondary" style="margin-left: 1rem;">View Menu</a>
+            </p>
+
+            <div style="margin-top: 3rem; border-top: 2px solid var(--border-color); padding-top: 2rem;">
+                <h3>Have Questions?</h3>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:+12085551234">(208) 555-1234</a><br>
+                    <strong>Email:</strong> <a href="mailto:info@harvestandhearth.com">info@harvestandhearth.com</a><br>
+                    <strong>Hours:</strong> Tue-Thu 5-9pm, Fri-Sat 5-10pm, Sun 5-8pm (Closed Mondays)
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">📹 Demo Video</a> | 
+            <a href="attributions.html">Attributions</a>
+        </p>
+        <p>&copy; 2024 Harvest & Hearth Restaurant. All rights reserved.</p>
+        <p>Experience farm-to-table dining in Idaho Falls, ID</p>
+    </footer>
+
+    <script type="module">
+        import { displaySubmittedData } from './scripts/formHandler.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            displaySubmittedData(params);
+        });
+
+        // Simple navigation setup
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav ul');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('show');
+            });
+        }
+
+        // Close menu when a link is clicked
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav) nav.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* Image optimization guide and placeholder styles */
+
+/* 
+  Image Optimization for Harvest & Hearth
+  
+  IMPLEMENTATION GUIDELINES:
+  
+  1. Image Formats:
+     - Use WebP with JPG fallback for photographs
+     - Use SVG or PNG for icons and graphics
+     - Target image sizes:
+       Mobile: 400-600px wide
+       Desktop: 800-1200px wide
+  
+  2. Lazy Loading:
+     Add loading="lazy" attribute to <img> tags
+     Example: <img src="image.jpg" alt="description" loading="lazy">
+  
+  3. Intrinsic Aspect Ratio:
+     Use aspect-ratio CSS property or image with explicit width/height
+     <img src="image.jpg" width="1200" height="800" alt="...">
+  
+  4. Responsive Images:
+     Use srcset for multiple resolutions
+     <img src="image.jpg" 
+          srcset="image-300w.jpg 300w, image-600w.jpg 600w"
+          alt="description"
+          loading="lazy">
+  
+  5. File Size Targets:
+     Hero image: < 150KB
+     Menu item images: < 50KB each
+     Total page images: < 300KB
+*/
+
+/* Placeholder styling for images during loading */
+[data-placeholder] {
+  background: linear-gradient(135deg, #f0f1e8 0%, #e8e9d8 100%);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2D5016;
+  font-weight: bold;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Loading state for images */
+img[loading="lazy"] {
+  background-color: #f5f1e8;
+}
+
+/* Image container with aspect ratio */
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero image sizing */
+.hero-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    max-height: 400px;
+  }
+}
+
+/* Menu card image */
+.menu-card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: #f5f1e8;
+}
+
+/* Picture element for responsive images */
+picture {
+  display: block;
+}
+
+picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

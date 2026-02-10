@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#2D5016" stop-opacity="1" />
+      <stop offset="100%" stop-color="#D4A574" stop-opacity="0.25" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="#2D5016" />
+  <rect width="1200" height="400" fill="url(#g)" />
+  <g fill="#F5F1E8" font-family="Merriweather, serif" font-weight="700">
+    <text x="60" y="120" font-size="48">Harvest &amp; Hearth</text>
+    <text x="60" y="180" font-size="22" fill="#F5F1E8">Farm-to-Table dining with local ingredients</text>
+  </g>
+  <g transform="translate(900,60)" fill="#D4A574">
+    <circle cx="40" cy="40" r="40" fill="#D4A574" opacity="0.12" />
+    <text x="0" y="48" font-family="Lato, sans-serif" font-size="18" fill="#2D5016">Make a Reservation</text>
+  </g>
+</svg>

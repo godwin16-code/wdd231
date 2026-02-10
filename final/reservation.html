@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Reservation - Harvest & Hearth</title>
+    <meta name="description" content="Reserve your table at Harvest & Hearth Restaurant in Idaho Falls. Book your farm-to-table dining experience today.">
+    <meta name="author" content="Godwin Iwajomo">
+    <meta property="og:title" content="Reservations - Harvest & Hearth">
+    <meta property="og:description" content="Book your table for an unforgettable dining experience.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232D5016' width='100' height='100'/><text y='75' font-size='90' font-weight='bold' fill='%23D4A574' text-anchor='middle' x='50'>H</text></svg>">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/images.css">
+</head>
+<body>
+    <header>
+        <h1>🌾 Harvest & Hearth</h1>
+        <button class="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about-contact.html">About & Contact</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <main>
+                <section class="hero" style="padding: 2rem 1.5rem;">
+                        <picture style="display:block; margin:0 auto 1rem; max-width:1000px;">
+                            <img src="images/hero.svg" alt="Harvest & Hearth hero image" class="hero-image" loading="lazy">
+                        </picture>
+                        <h1>Make a Reservation</h1>
+                        <p>Reserve your table for an unforgettable farm-to-table experience</p>
+                </section>
+
+        <section class="content-section">
+            <h2>Reservation Booking</h2>
+            <p>
+                We look forward to welcoming you to Harvest & Hearth! To reserve your table, please fill out the form below 
+                with your preferred dining details. We recommend booking ahead, especially for weekend dining.
+            </p>
+            
+            <form action="form-action.html" method="GET">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <h3>Guest Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="res-name">Full Name *</label>
+                        <input type="text" id="res-name" name="guestName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-email">Email Address *</label>
+                        <input type="email" id="res-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-phone">Phone Number *</label>
+                        <input type="tel" id="res-phone" name="phone" required>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem;">Reservation Details</h3>
+
+                    <div class="form-group">
+                        <label for="res-date">Preferred Date *</label>
+                        <input type="date" id="res-date" name="reservationDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-time">Preferred Time *</label>
+                        <select id="res-time" name="reservationTime" required>
+                            <option value="">Select a time</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="5:30 PM">5:30 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="6:30 PM">6:30 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="7:30 PM">7:30 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                            <option value="8:30 PM">8:30 PM</option>
+                            <option value="9:00 PM">9:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-party">Number of Guests *</label>
+                        <select id="res-party" name="partySize" required>
+                            <option value="">Select party size</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9">9+ Guests (Call us)</option>
+                        </select>
+                    </div>
+
+                    <h3 style="margin-top: 1.5rem;">Special Requests</h3>
+
+                    <div class="form-group">
+                        <label for="res-dietary">Dietary Restrictions or Preferences</label>
+                        <textarea id="res-dietary" name="dietaryRestrictions" placeholder="e.g., Vegetarian, Vegan, Gluten-free, Allergies, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-occasion">Special Occasion</label>
+                        <select id="res-occasion" name="occasion">
+                            <option value="">Select occasion (optional)</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="engagement">Engagement</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="celebration">General Celebration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-notes">Additional Notes</label>
+                        <textarea id="res-notes" name="additionalNotes" placeholder="Any other requests or information you'd like us to know..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-preferences">
+                            <input type="checkbox" id="res-preferences" name="newsPreferences">
+                            I'd like to receive updates about seasonal menus and special events
+                        </label>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <button type="submit" class="btn">Complete Reservation</button>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            * Required fields. A confirmation will be sent to your email address.
+                        </p>
+                    </div>
+                </div>
+            </form>
+
+            <div style="background-color: #f0f8e8; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid var(--primary-color);">
+                <h3 style="margin-top: 0;">Cancellation Policy</h3>
+                <p>
+                    We require 24 hours notice for cancellations or modifications. Cancellations made less than 24 hours 
+                    before your reservation may be charged as a no-show fee.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">📹 Demo Video</a> | 
+            <a href="attributions.html">Attributions</a>
+        </p>
+        <p>&copy; 2024 Harvest & Hearth Restaurant. All rights reserved.</p>
+        <p>Experience farm-to-table dining in Idaho Falls, ID</p>
+    </footer>
+
+    <script>
+        // Simple navigation setup
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav ul');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('show');
+            });
+        }
+
+        // Close menu when a link is clicked
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav) nav.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>

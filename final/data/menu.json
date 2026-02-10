@@ -1,0 +1,180 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Heirloom Tomato Salad",
+      "category": "appetizer",
+      "price": 12.95,
+      "description": "Crisp mixed greens with heirloom tomatoes, fresh mozzarella, and basil vinaigrette",
+      "farmPartner": "Miller Family Farm",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "heirloom-tomato.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Roasted Beet Salad",
+      "category": "appetizer",
+      "price": 13.95,
+      "description": "Roasted local beets with goat cheese, candied walnuts, and arugula",
+      "farmPartner": "Riverside Organic",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "roasted-beet.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Wild Mushroom Bisque",
+      "category": "appetizer",
+      "price": 11.95,
+      "description": "Creamy soup with foraged wild mushrooms and fresh thyme",
+      "farmPartner": "Mountain Fresh Foraging",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "mushroom-bisque.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Pan-Seared Local Trout",
+      "category": "entree",
+      "price": 24.95,
+      "description": "Fresh trout from Henrys Fork with lemon butter and seasonal vegetables",
+      "farmPartner": "Idaho Trout Co",
+      "seasonal": false,
+      "vegetarian": false,
+      "image": "pan-seared-trout.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Grass-Fed Beef Ribeye",
+      "category": "entree",
+      "price": 32.95,
+      "description": "Premium ribeye from local ranches, grilled to perfection with herb butter",
+      "farmPartner": "Valley View Ranch",
+      "seasonal": false,
+      "vegetarian": false,
+      "image": "ribeye-steak.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Seasonal Vegetable Risotto",
+      "category": "entree",
+      "price": 18.95,
+      "description": "Creamy arborio rice with seasonal vegetables, parmesan, and truffle oil",
+      "farmPartner": "Riverside Organic",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "vegetable-risotto.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Free-Range Chicken Breast",
+      "category": "entree",
+      "price": 22.95,
+      "description": "Herb-roasted chicken with roasted root vegetables and pan jus",
+      "farmPartner": "Happy Hen Farms",
+      "seasonal": false,
+      "vegetarian": false,
+      "image": "chicken-breast.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Farm-to-Table Pasta",
+      "category": "entree",
+      "price": 19.95,
+      "description": "Handmade pasta with seasonal vegetables and local herb sauce",
+      "farmPartner": "Miller Family Farm",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "farm-pasta.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Herb-Roasted Pork Loin",
+      "category": "entree",
+      "price": 26.95,
+      "description": "Locally sourced pork loin with sage and thyme, served with roasted root vegetables",
+      "farmPartner": "Valley View Ranch",
+      "seasonal": false,
+      "vegetarian": false,
+      "image": "pork-loin.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Wild Salmon with Dill",
+      "category": "entree",
+      "price": 28.95,
+      "description": "Alaska wild salmon fillet with fresh dill cream sauce and asparagus",
+      "farmPartner": "Pacific Coast Seafood",
+      "seasonal": false,
+      "vegetarian": false,
+      "image": "wild-salmon.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Berry Cheesecake",
+      "category": "dessert",
+      "price": 8.95,
+      "description": "House-made cheesecake with fresh seasonal berries and berry coulis",
+      "farmPartner": "Berry Hill Orchards",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "berry-cheesecake.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Chocolate Lava Cake",
+      "category": "dessert",
+      "price": 7.95,
+      "description": "Warm chocolate cake with molten center, vanilla ice cream, and fresh mint",
+      "farmPartner": "Harvest Creamery",
+      "seasonal": false,
+      "vegetarian": true,
+      "image": "chocolate-lava.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Stone Fruit Tart",
+      "category": "dessert",
+      "price": 9.95,
+      "description": "Buttery tart shell with seasonal stone fruits and almond cream",
+      "farmPartner": "Berry Hill Orchards",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "stone-fruit-tart.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Apple Crisp",
+      "category": "dessert",
+      "price": 7.50,
+      "description": "Warm baked local apples with oat and walnut topping, served with vanilla ice cream",
+      "farmPartner": "Miller Family Farm",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "apple-crisp.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Seasonal Fruit Sorbet",
+      "category": "dessert",
+      "price": 6.95,
+      "description": "Hand-churned sorbet made from fresh seasonal fruits and local honey",
+      "farmPartner": "Berry Hill Orchards",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "fruit-sorbet.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Lavender Panna Cotta",
+      "category": "dessert",
+      "price": 8.50,
+      "description": "Silky panna cotta infused with local lavender, topped with edible flowers",
+      "farmPartner": "Harvest Lavender Farm",
+      "seasonal": true,
+      "vegetarian": true,
+      "image": "lavender-panna-cotta.jpg"
+    }
+  ]
+}

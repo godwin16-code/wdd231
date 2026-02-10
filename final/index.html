@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest & Hearth - Farm-to-Table Restaurant in Idaho Falls</title>
+    <meta name="description" content="Experience fine dining with locally sourced ingredients at Harvest & Hearth. Farm-to-table restaurant in Idaho Falls, Idaho.">
+    <meta name="author" content="Godwin Iwajomo">
+    <meta property="og:title" content="Harvest & Hearth - Farm-to-Table Restaurant">
+    <meta property="og:description" content="Experience seasonal cuisine from local farms in Idaho Falls.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232D5016' width='100' height='100'/><text y='75' font-size='90' font-weight='bold' fill='%23D4A574' text-anchor='middle' x='50'>H</text></svg>">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/images.css">
+</head>
+<body>
+    <header>
+        <h1>🌾 Harvest & Hearth</h1>
+        <button class="hamburger" aria-label="Toggle navigation menu">☰</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about-contact.html">About & Contact</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+                        <picture style="display:block; margin:0 auto 1rem;">
+                            <img src="images/hero.svg" alt="Harvest & Hearth hero image" class="hero-image" loading="lazy">
+                        </picture>
+                        <h1>Farm-to-Table Excellence</h1>
+                        <p>Discover seasonal cuisine crafted from the freshest local ingredients</p>
+                        <a href="reservation.html" class="btn pulse">Make a Reservation</a>
+        </section>
+
+        <!-- Featured Menu Items Section -->
+        <section class="content-section">
+            <h2>Featured Menu Items</h2>
+            <p>Explore our seasonal selection featuring fresh ingredients from local farms and partners.</p>
+            
+            <div style="margin-bottom: 2rem;">
+                <label for="sort-menu"><strong>Sort By:</strong></label>
+                <select id="sort-menu" data-sort-menu style="padding: 0.5rem; font-size: 1rem;">
+                    <option value="name">Name</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div data-menu-container class="menu-grid">
+                <!-- Menu items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section class="content-section">
+            <h2>Your Favorites</h2>
+            <p>Items you've saved to view later or bring to your reservation:</p>
+            <div data-favorites-container>
+                <p>No favorite items saved yet. Click "Details" on any menu item to add to favorites!</p>
+            </div>
+        </section>
+
+        <!-- Location Information -->
+        <section class="content-section">
+            <h2>Visit Us</h2>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                <div>
+                    <h3>Location & Hours</h3>
+                    <p>
+                        <strong>📍 Harvest & Hearth Restaurant</strong><br>
+                        123 Main Street<br>
+                        Idaho Falls, ID 83402<br>
+                        <strong>Phone:</strong> <a href="tel:+12085551234">(208) 555-1234</a><br>
+                        <strong>Email:</strong> <a href="mailto:info@harvestandhearth.com">info@harvestandhearth.com</a>
+                    </p>
+                    <h4>Hours of Operation</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><strong>Tuesday - Thursday:</strong> 5:00 PM - 9:00 PM</li>
+                        <li><strong>Friday - Saturday:</strong> 5:00 PM - 10:00 PM</li>
+                        <li><strong>Sunday:</strong> 5:00 PM - 8:00 PM</li>
+                        <li><strong>Monday:</strong> Closed</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Farm Partners</h3>
+                    <p>We proudly partner with local farms and producers including:</p>
+                    <ul>
+                        <li>Miller Family Farm</li>
+                        <li>Riverside Organic</li>
+                        <li>Valley View Ranch</li>
+                        <li>Happy Hen Farms</li>
+                        <li>Berry Hill Orchards</li>
+                        <li>Mountain Fresh Foraging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="content-section" style="background: linear-gradient(135deg, #2D5016 0%, #1a3009 100%); color: #F5F1E8; text-align: center;">
+            <h2 style="color: #D4A574; border-color: #D4A574;">Ready to Experience Harvest & Hearth?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Reserve your table today for an unforgettable dining experience.</p>
+            <a href="reservation.html" class="btn">Book Your Table Now</a>
+        </section>
+    </main>
+
+    <!-- Modal for Menu Item Details -->
+    <div data-modal class="modal">
+        <div class="modal-content">
+            <!-- Content will be inserted here dynamically -->
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener">📹 Demo Video</a> | 
+            <a href="attributions.html">Attributions</a>
+        </p>
+        <p>&copy; 2024 Harvest & Hearth Restaurant. All rights reserved.</p>
+        <p>A fine dining experience celebrating local agriculture in Idaho Falls, ID</p>
+    </footer>
+
+    <script type="module">
+        import { initializeApp, displayFavorites } from './scripts/app.mjs';
+        
+        // Initialize app when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+            displayFavorites();
+        });
+        
+        // Update favorites display when storage changes
+        window.addEventListener('storage', () => {
+            displayFavorites();
+        });
+    </script>
+</body>
+</html>
