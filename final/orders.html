@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View and manage your Harvest & Hearth orders">
+  <meta name="og:title" content="My Orders | Harvest & Hearth">
+  <meta name="og:description" content="View and manage your restaurant orders">
+  <meta name="og:image" content="images/hero.svg">
+  <title>My Orders | Harvest & Hearth</title>
+  <link rel="icon" type="image/svg+xml" href="images/hero.svg">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header>
+    <h1>Harvest & Hearth</h1>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about-contact.html">About & Contact</a></li>
+      <li><a href="reservation.html">Reservations</a></li>
+      <li><a href="orders.html">My Orders</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="orders-section">
+      <h2>Your Orders</h2>
+      <p class="orders-description">
+        Items you've added to your order will appear below. 
+        Adjust quantities or remove items as needed, then proceed to make a reservation.
+      </p>
+
+      <div class="orders-container">
+        <div data-orders-container></div>
+      </div>
+
+      <div class="orders-footer">
+        <div class="order-summary">
+          <div class="summary-item">
+            <span>Items:</span>
+            <span data-item-count>0</span>
+          </div>
+          <div class="summary-item">
+            <span>Total Quantity:</span>
+            <span data-total-quantity>0</span>
+          </div>
+          <div class="summary-item total">
+            <span>Order Total:</span>
+            <span data-order-total>$0.00</span>
+          </div>
+        </div>
+        
+        <div class="orders-actions">
+          <button class="btn" onclick="window.location.href='menu.html'">Continue Shopping</button>
+          <button class="btn btn-primary" id="proceed-to-reservation" 
+                  data-action="proceed" style="display: none;">
+            Proceed to Reservation
+          </button>
+          <button class="btn btn-secondary" id="clear-orders" data-action="clear" style="display: none;">
+            Clear All
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <h3>Harvest & Hearth</h3>
+      <p>Farm-to-table dining celebrating local ingredients and sustainable practices.</p>
+      <address>
+        <strong>Location:</strong><br>
+        123 Local Farm Lane<br>
+        Springfield, ST 12345<br>
+        <strong>Phone:</strong> (555) 123-4567<br>
+        <strong>Email:</strong> <a href="mailto:hello@harvestandhearth.com">hello@harvestandhearth.com</a>
+      </address>
+      <nav class="footer-nav">
+        <a href="attributions.html">Attributions</a>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+    <p class="copyright">&copy; 2024 Harvest & Hearth. All rights reserved.</p>
+  </footer>
+
+  <!-- Order Item Modal -->
+  <div data-modal class="modal">
+    <div class="modal-content">
+      <!-- Modal content will be inserted here -->
+    </div>
+  </div>
+
+  <script type="module">
+    import * as orderManager from './scripts/orderManager.mjs';
+    import * as domUtils from './scripts/domUtils.mjs';
+    import * as themeManager from './scripts/themeManager.mjs';
+
+    // Initialize orders page
+    function initializeOrdersPage() {
+      themeManager.initializeTheme();
+      setupNavigationListeners();
+      displayOrders();
+      setupActionListeners();
+      updateOrderSummary();
+    }
+
+    function setupNavigationListeners() {
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav ul');
+      
+      if (hamburger) {
+        hamburger.addEventListener('click', () => {
+          domUtils.toggleHamburger(nav);
+        });
+      }
+      
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (nav) domUtils.closeNav(nav);
+        });
+      });
+    }
+
+    function displayOrders() {
+      const container = document.querySelector('[data-orders-container]');
+      const orders = orderManager.getOrders();
+      
+      if (!container) return;
+      
+      if (orders.length === 0) {
+        container.innerHTML = `
+          <div class="empty-orders">
+            <p>No items in your order yet.</p>
+            <p><a href="menu.html" class="btn btn-primary">Browse Menu</a></p>
+          </div>
+        `;
+        document.getElementById('proceed-to-reservation').style.display = 'none';
+        document.getElementById('clear-orders').style.display = 'none';
+        return;
+      }
+      
+      const html = orders.map(item => createOrderItemHTML(item)).join('');
+      container.innerHTML = html;
+      
+      // Setup event listeners for quantity controls and delete buttons
+      setupOrderItemListeners();
+      
+      // Show action buttons
+      document.getElementById('proceed-to-reservation').style.display = 'inline-block';
+      document.getElementById('clear-orders').style.display = 'inline-block';
+    }
+
+    function createOrderItemHTML(item) {
+      const price = parseFloat(item.price).toFixed(2);
+      const itemTotal = (parseFloat(item.price) * item.quantity).toFixed(2);
+      
+      return `
+        <div class="order-item" data-order-id="${item.orderId}">
+          <div class="order-item-image">
+            <img src="images/${item.image}" 
+                 alt="${item.name}" 
+                 onerror="this.onerror=null;this.src='images/menu-placeholder.svg'">
+          </div>
+          <div class="order-item-details">
+            <h3>${item.name}</h3>
+            <p class="order-item-price">$${price}</p>
+            <p class="order-item-category">${item.category}</p>
+          </div>
+          <div class="order-item-quantity">
+            <button class="qty-btn minus" data-order-id="${item.orderId}">−</button>
+            <input type="number" class="qty-input" value="${item.quantity}" 
+                   min="1" data-order-id="${item.orderId}">
+            <button class="qty-btn plus" data-order-id="${item.orderId}">+</button>
+          </div>
+          <div class="order-item-total">
+            <span>$${itemTotal}</span>
+          </div>
+          <button class="btn-remove" data-order-id="${item.orderId}" 
+                  aria-label="Remove ${item.name}">×</button>
+        </div>
+      `;
+    }
+
+    function setupOrderItemListeners() {
+      // Quantity decrease buttons
+      document.querySelectorAll('.qty-btn.minus').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const orderId = e.target.dataset.orderId;
+          const item = orderManager.getOrders().find(o => o.orderId === orderId);
+          if (item && item.quantity > 1) {
+            orderManager.updateOrderQuantity(orderId, item.quantity - 1);
+            displayOrders();
+            updateOrderSummary();
+          }
+        });
+      });
+      
+      // Quantity increase buttons
+      document.querySelectorAll('.qty-btn.plus').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const orderId = e.target.dataset.orderId;
+          const item = orderManager.getOrders().find(o => o.orderId === orderId);
+          if (item) {
+            orderManager.updateOrderQuantity(orderId, item.quantity + 1);
+            displayOrders();
+            updateOrderSummary();
+          }
+        });
+      });
+      
+      // Quantity input fields
+      document.querySelectorAll('.qty-input').forEach(input => {
+        input.addEventListener('change', (e) => {
+          const orderId = e.target.dataset.orderId;
+          const qty = Math.max(1, parseInt(e.target.value) || 1);
+          orderManager.updateOrderQuantity(orderId, qty);
+          displayOrders();
+          updateOrderSummary();
+        });
+      });
+      
+      // Remove buttons
+      document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const orderId = e.target.dataset.orderId;
+          const item = orderManager.getOrders().find(o => o.orderId === orderId);
+          if (item && confirm(`Remove ${item.name} from order?`)) {
+            orderManager.removeFromOrder(orderId);
+            displayOrders();
+            updateOrderSummary();
+          }
+        });
+      });
+    }
+
+    function updateOrderSummary() {
+      const summary = orderManager.getOrderSummary();
+      
+      document.querySelector('[data-item-count]').textContent = summary.itemCount;
+      document.querySelector('[data-total-quantity]').textContent = summary.totalQuantity;
+      document.querySelector('[data-order-total]').textContent = `$${summary.total.toFixed(2)}`;
+    }
+
+    function setupActionListeners() {
+      const proceedBtn = document.getElementById('proceed-to-reservation');
+      const clearBtn = document.getElementById('clear-orders');
+      
+      if (proceedBtn) {
+        proceedBtn.addEventListener('click', () => {
+          window.location.href = 'reservation.html';
+        });
+      }
+      
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          if (confirm('Clear all items from your order?')) {
+            orderManager.clearOrders();
+            displayOrders();
+            updateOrderSummary();
+          }
+        });
+      }
+    }
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', initializeOrdersPage);
+  </script>
+</body>
+</html>

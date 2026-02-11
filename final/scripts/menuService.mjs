@@ -44,3 +44,23 @@ export function getUniqueCategories(items) {
 export function getUniqueFarmPartners(items) {
   return [...new Set(items.map(item => item.farmPartner))].sort();
 }
+export function searchMenuItems(items, searchTerm) {
+  if (!searchTerm || searchTerm.trim() === '') return items;
+  
+  const term = searchTerm.toLowerCase();
+  return items.filter(item => {
+    return (
+      item.name.toLowerCase().includes(term) ||
+      item.description.toLowerCase().includes(term) ||
+      item.farmPartner.toLowerCase().includes(term) ||
+      item.category.toLowerCase().includes(term)
+    );
+  });
+}
+
+export function filterByPriceRange(items, minPrice, maxPrice) {
+  return items.filter(item => {
+    const price = parseFloat(item.price);
+    return price >= minPrice && price <= maxPrice;
+  });
+}

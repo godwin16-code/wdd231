@@ -24,7 +24,10 @@ export function renderMenuCard(item) {
             ${item.vegetarian ? '<span class="menu-badge">Vegetarian</span>' : ''}
             ${item.seasonal ? '<span class="menu-badge">Seasonal</span>' : ''}
           </div>
-          <button class="btn btn-small view-details" data-id="${item.id}">Details</button>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-small view-details" data-id="${item.id}">Details</button>
+            <button class="btn btn-small book-item" data-id="${item.id}" style="background-color: #D4A574; color: #2D5016;">📅 Book</button>
+          </div>
         </div>
       </div>
     </div>

@@ -15,8 +15,7 @@
 </head>
 <body>
     <header>
-        <h1>🌾 Harvest & Hearth</h1>
-        <button class="hamburger" aria-label="Toggle navigation menu">☰</button>
+        <h1>🌾 Harvest & Hearth</h1>        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>        <button class="hamburger" aria-label="Toggle navigation menu">☰</button>
     </header>
 
     <nav>
@@ -25,6 +24,7 @@
             <li><a href="menu.html">Menu</a></li>
             <li><a href="about-contact.html">About & Contact</a></li>
             <li><a href="reservation.html">Reservations</a></li>
+            <li><a href="orders.html">My Orders</a></li>
         </ul>
     </nav>
 
@@ -43,6 +43,30 @@
             <!-- Filter Options -->
             <div style="margin-bottom: 2rem; padding: 1.5rem; background-color: #f5f1e8; border-radius: 8px;">
                 <h3 style="margin-top: 0;">Filter Menu</h3>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong>Search Menu:</strong>
+                    <div style="margin-top: 0.5rem;">
+                        <input type="text" id="menu-search" placeholder="Search by name, ingredient, or farm partner..." 
+                               style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; box-sizing: border-box;">
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <strong>Price Range:</strong> $<span id="price-min-display">0</span> - $<span id="price-max-display">50</span>
+                    <div style="margin-top: 0.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="price-min" style="font-size: 0.85rem;">Min: $</label>
+                            <input type="range" id="price-min" min="0" max="50" value="0" 
+                                   style="width: 100%; cursor: pointer;">
+                        </div>
+                        <div>
+                            <label for="price-max" style="font-size: 0.85rem;">Max: $</label>
+                            <input type="range" id="price-max" min="0" max="50" value="50" 
+                                   style="width: 100%; cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
                 
                 <div style="margin-bottom: 1rem;">
                     <strong>By Category:</strong>
