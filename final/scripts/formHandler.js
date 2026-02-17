@@ -20,7 +20,7 @@ export function displaySubmittedData(params) {
   if (!submittedInfo) return;
   
   let dataExists = false;
-  let html = '<table style="width: 100%; border-collapse: collapse;">';
+  let html = '<table class="table-full">';
   
   for (const [key, value] of params.entries()) {
     if (value && value.trim() !== '') {
@@ -31,9 +31,9 @@ export function displaySubmittedData(params) {
         .trim();
       
       html += `
-        <tr style="border-bottom: 1px solid #ddd;">
-          <td style="padding: 0.75rem; font-weight: bold; width: 30%; color: #2D5016;">${escapeHtml(displayKey)}:</td>
-          <td style="padding: 0.75rem;">${escapeHtml(value)}</td>
+        <tr class="border-bottom">
+          <td class="padding-0-75 font-weight-bold width-30" style="color: #2D5016;">${escapeHtml(displayKey)}:</td>
+          <td class="padding-0-75">${escapeHtml(value)}</td>
         </tr>
       `;
     }
@@ -44,7 +44,7 @@ export function displaySubmittedData(params) {
   if (dataExists) {
     submittedInfo.innerHTML = html;
   } else {
-    submittedInfo.innerHTML = '<p style="color: #666; font-style: italic;">Thank you for your submission!</p>';
+    submittedInfo.innerHTML = '<p class="font-size-0-9" style="font-style: italic;">Thank you for your submission!</p>';
   }
 }
 

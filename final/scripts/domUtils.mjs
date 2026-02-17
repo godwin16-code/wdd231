@@ -24,9 +24,9 @@ export function renderMenuCard(item) {
             ${item.vegetarian ? '<span class="menu-badge">Vegetarian</span>' : ''}
             ${item.seasonal ? '<span class="menu-badge">Seasonal</span>' : ''}
           </div>
-          <div style="display: flex; gap: 0.5rem;">
+          <div class="flex-gap">
             <button class="btn btn-small view-details" data-id="${item.id}">Details</button>
-            <button class="btn btn-small book-item" data-id="${item.id}" style="background-color: #D4A574; color: #2D5016;">📅 Book</button>
+            <button class="btn btn-small book-item btn-book" data-id="${item.id}">📅 Book</button>
           </div>
         </div>
       </div>
@@ -36,8 +36,8 @@ export function renderMenuCard(item) {
 
 export function renderModal(item) {
   return `
-    <div style="display:block; text-align:center; margin-bottom:1rem;">
-      <picture style="display:block; margin:0 auto 1rem; max-width:400px;">
+    <div class="image-modal">
+      <picture class="image-modal">
         <img src="images/${item.image || 'menu-placeholder.svg'}" alt="${item.name} image" loading="lazy" style="width:100%; height:auto; border-radius:8px;" onerror="this.onerror=null;this.src='images/menu-placeholder.svg'">
       </picture>
     </div>
@@ -70,7 +70,7 @@ export function showLoading(container) {
 
 export function showError(container, message) {
   clearContainer(container);
-  container.innerHTML = `<div style="color: #c44; padding: 2rem; text-align: center;">Error: ${message}</div>`;
+  container.innerHTML = `<div class="color-error text-center">Error: ${message}</div>`;
 }
 
 export function toggleHamburger(nav) {

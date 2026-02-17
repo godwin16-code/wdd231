@@ -83,14 +83,6 @@ img[loading="lazy"] {
   }
 }
 
-/* Menu card image */
-.menu-card-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  background-color: #f5f1e8;
-}
-
 /* Picture element for responsive images */
 picture {
   display: block;
