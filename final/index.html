@@ -9,7 +9,12 @@
     <meta property="og:title" content="Harvest & Hearth - Farm-to-Table Restaurant">
     <meta property="og:description" content="Experience seasonal cuisine from local farms in Idaho Falls.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://harvestandhearth.com/images/hero.svg">
+    <meta property="og:url" content="https://harvestandhearth.com/index.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232D5016' width='100' height='100'/><text y='75' font-size='90' font-weight='bold' fill='%23D4A574' text-anchor='middle' x='50'>H</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/images.css">
@@ -34,7 +39,7 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-                        <picture style="display:block; margin:0 auto 1rem;">
+                        <picture class="hero-picture">
                             <img src="images/hero.svg" alt="Harvest & Hearth hero image" class="hero-image" loading="lazy">
                         </picture>
                         <h1>Farm-to-Table Excellence</h1>
@@ -47,9 +52,9 @@
             <h2>Featured Menu Items</h2>
             <p>Explore our seasonal selection featuring fresh ingredients from local farms and partners.</p>
             
-            <div style="margin-bottom: 2rem;">
+            <div class="margin-bottom-2">
                 <label for="sort-menu"><strong>Sort By:</strong></label>
-                <select id="sort-menu" data-sort-menu style="padding: 0.5rem; font-size: 1rem;">
+                <select id="sort-menu" data-sort-menu class="sort-select">
                     <option value="name">Name</option>
                     <option value="price-asc">Price: Low to High</option>
                     <option value="price-desc">Price: High to Low</option>
@@ -96,7 +101,7 @@
         <!-- Location Information -->
         <section class="content-section">
             <h2>Visit Us</h2>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+            <div class="grid-1-col">
                 <div>
                     <h3>Location & Hours</h3>
                     <p>
@@ -107,7 +112,7 @@
                         <strong>Email:</strong> <a href="mailto:info@harvestandhearth.com">info@harvestandhearth.com</a>
                     </p>
                     <h4>Hours of Operation</h4>
-                    <ul style="list-style: none; padding: 0;">
+                    <ul class="list-none">
                         <li><strong>Tuesday - Thursday:</strong> 5:00 PM - 9:00 PM</li>
                         <li><strong>Friday - Saturday:</strong> 5:00 PM - 10:00 PM</li>
                         <li><strong>Sunday:</strong> 5:00 PM - 8:00 PM</li>
@@ -130,9 +135,9 @@
         </section>
 
         <!-- Call to Action -->
-        <section class="content-section" style="background: linear-gradient(135deg, #2D5016 0%, #1a3009 100%); color: #F5F1E8; text-align: center;">
-            <h2 style="color: #D4A574; border-color: #D4A574;">Ready to Experience Harvest & Hearth?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Reserve your table today for an unforgettable dining experience.</p>
+        <section class="content-section hero-special">
+            <h2>Ready to Experience Harvest & Hearth?</h2>
+            <p>Reserve your table today for an unforgettable dining experience.</p>
             <a href="reservation.html" class="btn">Book Your Table Now</a>
         </section>
     </main>

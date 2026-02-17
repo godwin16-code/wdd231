@@ -30,7 +30,149 @@
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap');
+/* ==================== INLINE STYLE REPLACEMENTS ==================== */
+
+.hero-picture {
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.hero-picture-large {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 1000px;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.sort-select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.grid-1-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.grid-1-col-small {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.list-none {
+  list-style: none;
+  padding: 0;
+}
+
+.hero-special {
+  background: linear-gradient(135deg, #2D5016 0%, #1a3009 100%);
+  color: #F5F1E8;
+  text-align: center;
+}
+
+.hero-special h2 {
+  color: #D4A574;
+  border-color: #D4A574;
+}
+
+.hero-special p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.margin-top-1-5 {
+  margin-top: 1.5rem;
+}
+
+.margin-top-2 {
+  margin-top: 2rem;
+}
+
+.font-size-0-9 {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.info-box {
+  background-color: #f0f8e8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.info-box h3 {
+  margin-top: 0;
+}
+
+.display-none {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-error {
+  color: #c44;
+  padding: 2rem;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+}
+
+.padding-0-75 {
+  padding: 0.75rem;
+}
+
+.table-full {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.image-modal {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 400px;
+}
+
+.image-modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.flex-gap {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-book {
+  background-color: #D4A574;
+  color: #2D5016;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
 /* ==================== GLOBAL STYLES ==================== */
 
